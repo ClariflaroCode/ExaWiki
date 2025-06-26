@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tu amiga fiel de Ingeniería de Sistemas y TUDAI"/>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/index.css">
+    <title>ExaWiki</title>
+</head>
+<body id="fondo"> <!--aca añadimos dinamicamente las clases claro oscuro con javascript-->
+    <header id="page-header">
+        <nav id="navbar-main">
+            <ul>
+                <li><button id="open-menu" class="menu-button" type="button">
+                    <img src="img/lineasMenuNegro.png" alt="tres lineas negras"></button></li>
+                <li><a href="index.html"><img class="logo" src="img/logo2.png" alt="Exawiki con un sigma en lugar de la E"></a></li>
+                <li>
+                    <label for="switch-light-dark"> <img id="theme-img" src="" alt="luna"> </label>
+                    <input id="switch-light-dark" type="button" alt="selector de tema claro oscuro">
+                </li>
+                </ul>
+        </nav>
+    
+        <nav id="navbar-topics">
+                    <ul class="nav-menu">
+                        <li><a href="index.html">MATERIAS</a></li>
+                        <li><a href="sites/consultanos.html">CONSULTANOS</a></li>
+                        <li><a href="sites/sobre_nosotras.html">SOBRE NOSOTRAS</a></li>
+                    </ul>  
+        </nav>
+    </header>
+        <main id="page-main">
+            <section id="card-container">
+                <article class="card">
+                    <header class="card-header"><h3>INTRODUCCIÓN A LA PROGRAMACIÓN 1</h3></header>
+                    <div class="card-content">
+                        <div class="description">
+                            <p>MATERIA DEL PRIMER CUATRIMESTRE DE INGENIERIA EN SISTEMAS.
+                            FUNDAMENTOS Y LOGICA DE LA PROGRAMACION EN PASCAL</p>
+                        </div>
+                        <ul class="subject-content">
+                            <li>PROGRAMACIÓN ESTRUCTURADA</li>
+                            <li>FILAS</li>
+                            <li>VARIABLES</li>
+                            <li>PROCEDIMIENTOS</li>
+                            <li>ARREGLOS</li>
+                            <li>MATRICES</li>
+                        </ul>
+                    </div>
+                    <footer class="card-footer">
+                        <a href="sites/programming_introduction.html" class="card-button">QUIERO APRENDER</a>
+                    </footer>
+                </article>
+                <article class="card">
+                    <header class="card-header"><h3>WEB 1</h3></header>
+                    <div class="card-content">
+                        <div class="description"> 
+                            <p>MATERIA DEL PRIMER CUATRIMESTRE DE TUDAI.
+                                FUNDAMENTOS Y LOGICA DE LA PROGRAMACION WEB FRONTEND, USANDO 
+                                HTML, CSS Y JAVASCRIPT</p>
+                        </div>
+                        
+                        <ul class="subject-content">
+                            <li>ARQUITECTURA CLIENTE-SERVIDOR</li>
+                            <li>HTML SEMÁNTICO</li>
+                            <li>DISEÑO RESPONSIVE</li>
+                            <li>AJAX</li>
+                            <li>JAVASCRIPT</li>
+                            <li>JSON</li>
+                        </ul>
+                    </div>
+                    <footer class="card-footer">
+                        <a href="sites/web_1.html" class="card-button">QUIERO APRENDER</a>
+                    </footer>     
+                </article>
+            </section>
+        </main>
+        <footer id="page-footer">
+            <a href="https://www.linkedin.com/in/julieta-watts/" target="_blank">
+                <figure>
+                    <img src="img/InBug-White.png" alt="icono-linkedIn" >
+                    <figcaption>LinkedIn Julieta</figcaption>
+                </figure>
+                </a>
+            <a href="https://www.linkedin.com/in/sofia-niyen" target="_blank">
+                <figure>
+                    <img src="img/InBug-White.png" alt="icono-linkedIn" >
+                    <figcaption>LinkedIn Sofía</figcaption>
+                </figure>
+            </a>
+        </footer>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/menu_desplegable_principal.js"></script>
+</body>
+</html>

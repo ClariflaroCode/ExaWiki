@@ -1,0 +1,7 @@
+Sitio web del proyecto:
+https://webi-grupo28.netlify.app
+
+MockApi:
+https://685325640594059b23d03fe2.mockapi.io/material-complementario  //JSON
+
+https://mockapi.io/clone/685325640594059b23d03fe3 //para editar desde el mockapi
