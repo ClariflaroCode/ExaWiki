@@ -1,0 +1,135 @@
+#card-container {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 2%;
+}
+.subject-content {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 50% 50%;
+    list-style: none;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 3%;
+    font-size: smaller;
+}
+.card-footer{
+    display: flex;
+    justify-content: center;
+}
+.subject-content li {
+    border: 1px solid #FFD6F5;
+    background-color: #FFD6F5;
+    color: #5C1476;
+    border-radius: 5px;
+    margin: 5px;
+    box-sizing: border-box;
+    text-wrap: balance; 
+    text-align: center;
+    align-content: center;
+    padding: 5%;
+    height: 80%;
+}
+
+.card {
+    margin: 5%;
+    padding: 3% 1%;
+    border-radius: 5px;
+    /* las tarjetas crecen iguales, sin esto queda una mas ancha que la otra */
+    flex: 1;
+}
+
+.card-header h3{
+    text-align: center;
+}
+
+.card-content{
+    justify-content: center;
+    align-items: center;
+}
+
+.description{
+    display: flex;
+    border-radius: 5px;
+    box-sizing: border-box;
+    height: 150px;
+    align-items: center;
+    text-align: center;
+}
+
+.card-button{
+    margin-bottom: 5%;
+    border-radius: 5px;
+    padding: 2%;
+}
+
+.claro .card-button{
+    border: 1px solid #FFD6F5;
+    background-color:#5C1476;
+    color: white;
+}
+
+.oscuro .card-button{
+    border: 1px solid white;
+    background-color:#FFD6F5;
+    color: #7B1A9E;
+}
+
+.card-button:hover {
+    box-shadow:  1px 1px 10px whitesmoke;
+}
+.card-button:active {
+    background-color: violet;
+}
+
+/* Cambios de tema claro oscuro */
+.claro #card-container .card {
+    background-color:#7B1A9E ;
+    color: white;
+    border: 1px solid black;
+}
+
+.oscuro #card-container .card {
+    background-color:#E9A5F1 ;
+    color: #5C1476;
+    border: 1px solid white;
+}
+
+.claro #card-container .description {
+    background-color: #A952CB;
+    color: white;
+ 
+}
+
+.oscuro #card-container .description {
+    background-color: #FFD6F5;
+    color: #5C1476;
+ 
+}
+
+
+
+@media (width >= 768px) { /*Si cumple la condicion esta en compu*/
+    #card-container {
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+    }
+    .card {
+        margin: 20px;
+    }
+
+    .subject-content li{
+        font-size: larger;
+    }
+    
+    .subject-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 50% 50%;
+    }
+
+}

@@ -1,0 +1,176 @@
+td {
+    border: 1px solid violet;
+    background-color: violet;
+    color: #7B1A9E;
+}
+th {
+    background-color: #A952CB;
+    color: rgb(255, 222, 255);
+}
+
+/* boton de temas */
+#course-menu{
+    margin: 0;
+    width: 100vw;
+    position: fixed;
+}
+
+/* desplaza el scrolleo a la pos deseada */
+.subject-item {
+    scroll-margin-top: 12vh;
+}
+
+.nav-list{
+    /* pos fixed para poder abrirlo desde cualquier lugar de la pagina,
+    el height y el width es para que tape el contenido de abajo */
+    display: none;
+    position: fixed;
+    margin: 0;
+    gap: 2vh;
+    height: 100vh;
+    width: 100vw;
+}
+
+.nav-list.show{
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-list li{
+    list-style: none;
+    border-bottom: 1px solid #a933d4;
+    padding: 2%;
+}
+
+.claro .nav-list{
+    background-color: #E9A5F1;
+    color: #5C1476;
+}
+
+.oscuro .nav-list, #filter-section {
+    background-color: #A952CB;
+    color: white;
+}
+
+#course {
+    padding: 5% 10%;
+}
+
+    /* parte 2 del tpe */
+#dinamic-table{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 7vh;    
+}
+
+button {
+    border: 1px solid #5C1476;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    color: #5C1476;
+    background-color:rgb(244, 170, 244);
+}
+
+
+#filter-section {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#filter-section button, #filter-section select {
+    width: 20%;
+    color: #5C1476;
+    background-color:rgb(244, 170, 244);
+
+}
+
+#modal-resource {
+    width: 50%;
+    z-index: 0;
+}
+
+#modal-resource form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;   
+}
+
+@media (width >=768px) {
+    #page-main{
+        display: flex;
+        flex-direction: column;
+        padding-top: 7vh;
+    }
+
+    td, th {
+        width: 10%;
+        padding: 1%;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    #sidebar{
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 6vw;
+        top: 15vh;
+    }
+
+    /* https://www.w3schools.com/cssref/css_pr_scroll-margin-top.php 
+       lo que encontre para acomodar la posicion en la navegacion*/
+    .subject-item {
+        scroll-margin-top: 14vh;
+    }
+
+    .nav-list{
+        position: static;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        width: auto;
+        font-size: large;
+        gap: 3vh;
+    }
+
+    .claro .nav-list {
+    background-color: transparent;
+    color: #5C1476;
+    }
+
+    .oscuro .nav-list {
+        background-color:transparent;
+        color: white;
+    }
+
+    #course-menu {
+        display: none;
+    }
+
+    /* parte 2 del tpe */
+    #dinamic-table{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    #resources-table{
+        max-width: 80%;
+    }
+
+    #filter-section{
+        width: 70%;
+    }
+ 
+}

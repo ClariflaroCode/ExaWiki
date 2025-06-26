@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExaWiki</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/course.css">
+</head>
+<body id="fondo">
+    <header id="page-header">
+        <nav id="navbar-main">
+            <ul>
+                <li><button id="open-menu" class="menu-button" type="button">
+                    <img src="../img/lineasMenuNegro.png" alt="tres lineas negras"></button></li>
+                <li><a href="../index.html"><img class="logo" src="../img/logo2.png" alt="Exawiki con un sigma en lugar de la E"></a></li>
+                <li>
+                    <label for="switch-light-dark"> <img id="theme-img" src="../img/lunitauwu.png" alt="luna"> </label>
+                    <input id="switch-light-dark" type="button" alt="selector de tema claro oscuro">
+                </li>
+            </ul>
+        </nav>
+        <nav id="navbar-topics">
+            <ul class="nav-menu">
+                <li><a href="../index.html">MATERIAS</a></li>
+                <li><a href="consultanos.html">CONSULTANOS</a></li>
+                <li><a href="sobre_nosotras.html">SOBRE NOSOTRAS</a></li>
+            </ul>  
+        </nav>
+        <button id="course-menu" class="button" type="button">TEMAS</button>
+    </header>
+    <main id="page-main">
+        <!--Esto en mobile es desplegable y necesita un boton que debemos ocultar en la versión de escritorio-->
+        <aside id="sidebar">
+            <nav class="nav-sidebar">
+                <ol class="nav-list">
+                    <li class="nav-item"> <a href="#client-service-architecture">Arquitectura Cliente-Servidor</a></li>
+                    <li class="nav-item"> <a href="#html">HTML</a></li>
+                    <li class="nav-item"> <a href="#css">CSS</a></li>
+                    <li class="nav-item"> <a href="#layouts">Layouts</a></li>
+                    <li class="nav-item"> <a href="#table-form">Table-form</a></li>
+                    <li class="nav-item"> <a href="#javascript">JavaScript</a></li>
+                    <li class="nav-item"> <a href="#responsive-design">Diseño Responsive</a></li>
+                    <li class="nav-item"> <a href="#inheritance-and-cascade-with-css">Herencia y Cascada en CSS</a></li>
+                    <li class="nav-item"> <a href="#semantic-html">HTML semántico</a></li>
+                    <li class="nav-item"> <a href="#json">JSON</a></li>
+                </ol>
+            </nav>
+        </aside>
+        <section id="course">
+            <h2>Web I</h2>
+
+            <article id="client-service-architecture" class="subject-item">
+                <h3>Arquitectura Cliente-Servidor</h3>
+                <p>Los componentes de la web se ordenan en dos grandes roles:
+                    clientes y servidores.
+                </p>
+                <h4>El servidor Web</h4>
+                <p>Atiende los pedidos de los cientes, publica información estática
+                    y ejecuta programas que generan  información dinámicamente a pedido de los clientes.
+                </p>
+                <h4>El cliente Web</h4>
+                <p>Genera solicitudes al servidor, procesa la información recibida mostrandosela al usuario y puede
+                    ejecutar programas que alteran o complementan la información recibida del servidor.
+                </p>
+            </article>
+            <article id="html" class="subject-item">
+                <h3>Lenguaje de Marcas de Hipertexto (HTML)</h3>
+                <p>Es el lenguaje de marcado estándar utilizado para definir la estructura y el contenido de las páginas web.
+                    A través de etiquetas, permite organizar elementos como encabezados, párrafos, imágenes, enlaces y otros recursos, 
+                    sirviendo como base para la interpretación y visualización del sitio por parte de los navegadores.
+                </p>
+                <p>Algunas de las etiquetas más comunes:</p>
+                <ul>
+                <li>
+                    <h4>&lt;header&gt;</h4>
+                    <p>Define la cabecera de la página o de una sección.</p>
+                </li>
+                <li>
+                    <h4>&lt;nav&gt;</h4>
+                    <p>Contiene enlaces de navegación dentro del sitio.</p>
+                </li>
+                <li>
+                    <h4>&lt;main&gt;</h4>
+                    <p>Representa el contenido principal de la página.</p>
+                </li>
+                <li>
+                    <h4>&lt;section&gt;</h4>
+                    <p>Agrupa contenido relacionado de forma temática.</p>
+                </li>
+                <li>
+                    <h4>&lt;footer&gt;</h4>
+                    <p>Define el pie de página con información adicional.</p>
+                </li>
+                </ul>
+            </article>
+            <article id="css" class="subject-item">
+                <h3> Hojas de Estilo en Cascada (CSS)</h3>
+                <p> lenguaje utilizado para definir la presentación visual de un sitio web.
+                    Permite aplicar estilos como colores, tamaños, márgenes, posiciones y fuentes a los elementos HTML, 
+                    mejorando su apariencia y adaptabilidad a distintos dispositivos.
+                </p>
+                <p>Algunos ejemplos:</p>
+                <ul>
+                    <li>
+                        <h4>color:</h4>
+                        <p>Define el color del texto.</p>
+                    </li>
+                    <li>
+                        <h4>background-color:</h4>
+                        <p>Establece el color de fondo de un elemento.</p>
+                    </li>
+                    <li>
+                        <h4>font-size:</h4>
+                        <p>Controla el tamaño del texto.</p>
+                    </li>
+                    <li>
+                        <h4>font-weight:</h4>
+                        <p>Controla el grosor del texto.</p>
+                    </li>
+            </article>
+            <article id="layouts" class="subject-item">
+                <h3>Layouts</h3>
+                <p>Es el conjunto de técnicas y propiedades utilizadas para organizar
+                   y posicionar los elementos dentro de una página web. 
+                   Permite controlar la estructura visual mediante modelos como 
+                   flexbox, grid, y posicionamiento tradicional.</p>
+            </article>
+            <article id="table-form" class="subject-item">
+                <h3>Table-form</h3>
+                <h4>Table</h4>
+                <p>La etiqueta &lt;table&gt; en HTML se utiliza para representar datos organizados
+                    en una tabla (filas y columnas). Ideal para mostrar información tabular, como horarios, resultados,
+                    o listas estructuradas.
+                </p>
+                <h4>Formularios</h4>
+                <p>La etiqueta &lt;form&gt; en HTML permite crear formularios interactivos que los 
+                    usuarios pueden completar y enviar. Se usan para recopilar datos como texto, correos, contraseñas, etc.
+                </p>
+            </article>
+            <article id="javascript" class="subject-item">
+                <h3>Javascript</h3>
+                <p>Es un lenguaje de programación que permite agregar interactividad y dinamismo a las páginas web.
+                   Se utiliza para responder a acciones del usuario, modificar el contenido en tiempo real y controlar
+                   el comportamiento de la interfaz.
+                </p>
+            </article>
+            <article id="responsive-design" class="subject-item">
+                <h3>Diseño Responsive</h3>
+                <p>Es una técnica de desarrollo web que permite que una página se adapte y se vea correctamente en
+                   distintos dispositivos y tamaños de pantalla. Se basa en el uso de unidades flexibles, media queries 
+                   y estructuras adaptativas para asegurar una experiencia de usuario óptima en computadoras, tablets y celulares.
+                </p>
+            </article>
+            <article id="inheritance-and-cascade-with-css" class="subject-item">
+                <h3>Herencia y Cascada en CSS</h3>
+                <h4>Herencia</h4>
+                <p>Es el mecanismo por el cual algunos estilos aplicados a un elemento padre se transmiten automáticamente a sus elementos hijos.</p>
+                <h4>Cascada</h4>
+                <p>Es la forma en que CSS decide qué reglas aplicar cuando hay múltiples estilos que afectan a un mismo elemento, basándose en la especificidad, orden y origen de las reglas.</p>
+            </article>
+            <article id="semantic-html"class="subject-item">
+                <h3>HTML semántico</h3>
+                <p>Es el uso de etiquetas HTML que tienen significado propio, describen claramente el contenido y su propósito
+                    para que el contenido sea más claro y organizado, facilitando la comprensión tanto para humanos como para máquinas (como buscadores y lectores de pantalla).     
+                </p>
+                <p>Algunas etiquetas HTML semánticas</p>
+                <ul>
+                    <li>
+                        <h4>&lt;aside&gt;</h4>
+                        <p>Contenido lateral o complementario.</p>
+                    </li>
+                    <li>
+                        <h4>&lt;article&gt;</h4>
+                        <p>Contenido independiente y autocontenido.</p>
+                    </li>
+                    <li>
+                        <h4>&lt;figure&gt;</h4>
+                        <p>Elemento gráfico con leyenda.</p>
+                    </li>
+                    <li>
+                        <h4>&lt;figcaption&gt;</h4>
+                        <p>Descripción de un elemento &lt;figure&gt;.</p>
+                    </li>
+                </ul>
+            </article>
+
+            <article id="json" class="subject-item">
+                <h3>Notación de Objetos de JavaScript (JSON)</h3>
+                <p>Es un formato sencillo y muy popular para guardar y compartir información en forma de texto. 
+                   Está diseñado para que tanto las personas como las computadoras puedan leerlo fácilmente.
+                   Con JSON, los datos se organizan en pares de “clave” y “valor”, lo que lo hace muy útil
+                   para intercambiar información entre aplicaciones o para guardar configuraciones.
+                </p>
+            </article>
+        </section>
+    </main>
+    <footer id="page-footer">
+        <a href="https://www.linkedin.com/in/julieta-watts/" target="_blank">
+            <figure>
+                <img src="../img/InBug-White.png" alt="icono-linkedIn" >
+                <figcaption>LinkedIn Julieta</figcaption>
+            </figure>
+            </a>
+        <a href="https://www.linkedin.com/in/sofia-niyen" target="_blank">
+            <figure>
+                <img src="../img/InBug-White.png" alt="icono-linkedIn" >
+                <figcaption>LinkedIn Sofía</figcaption>
+            </figure>
+        </a>
+    </footer>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/course.js"></script>
+</body>
+</html>

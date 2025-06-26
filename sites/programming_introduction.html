@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExaWiki</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/course.css">
+
+</head>
+<body id="fondo">
+    <header id="page-header">
+        <nav id="navbar-main">
+            <ul>
+                <li><button id="open-menu" class="menu-button" type="button">
+                    <img src="../img/lineasMenuNegro.png" alt="tres lineas negras"></button></li>
+                <li><a href="../index.html"><img class="logo" src="../img/logo2.png" alt="Exawiki con un sigma en lugar de la E"></a></li>
+                <li>
+                    <label for="switch-light-dark"> <img id="theme-img" src="../img/lunitauwu.png" alt="luna"> </label>
+                    <input id="switch-light-dark" type="button" alt="selector de tema claro oscuro">
+                </li>
+                </ul>
+        </nav>
+        <nav id="navbar-topics">
+            <ul class="nav-menu">
+                <li><a href="../index.html">MATERIAS</a></li>
+                <li><a href="consultanos.html">CONSULTANOS</a></li>
+                <li><a href="sobre_nosotras.html">SOBRE NOSOTRAS</a></li>
+            </ul>  
+        </nav>
+        <!-- ponemos el boton aca para que quede pegado al header y fijo. -->
+        <button id="course-menu" class="button" type="button">TEMAS</button>
+    </header>
+    <main id="page-main">
+        <!--Esto en mobile es desplegable y necesita un botón 
+        que debemos ocultar en la versión de escritorio-->
+        
+        <aside id="sidebar">
+            <nav id="nav-sidebar">
+                <ol class="nav-list">
+                    <li class="nav-item"><a href="#structured-programming">Programación Estructurada</a></li>
+                    <li class="nav-item"><a href="#stacks">Pilas</a></li>
+                    <li class="nav-item"><a href="#queues">Filas</a></li>
+                    <li class="nav-item"><a href="#variables">Variables</a></li>
+                    <li class="nav-item"><a href="#functions">Funciones</a></li>
+                    <li class="nav-item"><a href="#procedures">Procedimientos</a></li>
+                    <li class="nav-item"><a href="#structure-diagram">Diagrama de Estructura</a></li>
+                    <li class="nav-item"><a href="#arrays">Arreglos</a></li>
+                    <li class="nav-item"><a href="#shift-algorithms">Corrimientos</a></li>
+                    <li class="nav-item"><a href="#sortings-algorithms">Ordenamientos</a></li>
+                    <li class="nav-item"><a href="#search-algorithms">Búsquedas</a></li>
+                    <li class="nav-item"><a href="#matrices">Matrices</a></li>
+                </ol>
+            </nav>
+        </aside>
+        <!---->
+        
+        <section id="course">
+            <h2>Introducción a la Programación I</h2>
+            <article id="structured-programming" class="subject-item">
+                <h3>Programación Estructurada</h3>
+                <p>La programación estructurada comprende al programa bajo la perspectiva del paradigma imperativo: entiende al programa como un conjunto de instrucciones que la máquina entiende y ejecuta y se basa en tres principios: secuencia, selección e iteracción.</p>
+                <h4>Secuencia</h4>
+                <p>Describe un orden consecutivo a las instrucciones. Se lee la primer instrucción, se ejecuta, se lee la siguiente instrucción que tiene más abajo y repite hasta terminar la ejecución del programa. </p>
+                <h4>Selección</h4>
+                <p>Si se cumple una determinada condición un bloque de código (puede ser una única instrucción) será ejecutado, si no, se saltea este bloque y se continúa la ejecución. </p>
+                <p>Frente a una condición que evalúa verdadero o falso, se ejecuta un bloque determinado de código o no. </p>
+                <h4>Iteración</h4>
+                <p>Iterar refiere a la repetición de un bloque de código un número determinado de veces.</p>
+                <p>Todo bucle tiene una condición que mientras se cumpla, el bloque a iterarse se repetirá de principio a fin. Cuando llega al final preguntará si la condición se sigue cumpliendo, si sí, vuelve a repetir el código completo, si no, dejá de repetir, saltea todo el código iterativo y continúa la ejecución.</p>
+                <p>Notar que es importante alterar los parámetros de la condición de repetición dentro del bloque iterativo para que esta evalúe en falso en algún momento y deje de repetirse el código. Si esto no se hace, tendremos un bucle infinito y en algún momento el programa colapsa.</p>
+            </article>
+            <article id="stacks" class="subject-item">
+                <h3>Pilas</h3>
+                <p>Es un tipo de dato estructurado, esto quiere decir que tiene una estructura que contiene a más de un elemento y sigue un determinado comportamiento.</p>
+                <p>Las pilas constan de un tope, un conjunto de elementos y una base. Siempre el último dato que se agregue, se agrega en el tope y el primer dato que sale es el dato que está en el tope. No se puede conocer los elementos debajo del tope a menos que se desapile este mismo. </p>
+                <h4>Las operaciones asociadas a las pilas son</h4>
+                <ul>
+                    <li>
+                        <h5>VaciaPila(Pila)</h5>
+                        <p>Devuelve un valor de verdad (verdadero o falso) que indica si Pila tiene o no tiene elementos. Si tiene es falso, si no tiene, es verdadero</p>
+                    </li>
+                    <li>
+                        <h5>Tope(Pila)</h5>
+                        <p>Devuelve el elemento que está en el tope de la pila</p>
+                    </li>
+                    <li>
+                        <h5>Apilar(Pila1, elemento)</h5>
+                        <p>Apila elemento en Pila 1</p>
+                    </li>
+                    <li>
+                        <h5>Desapilar(Pila1)</h5>
+                        <p>Elimina un elemento de la Pila1</p>
+                    </li>
+                </ul>
+            </article>
+            <article id="queues" class="subject-item">
+                <h3>Filas</h3>
+                <p>Las filas es un tipo de dato estructurado que sigue la norma de FIFO (First In- First Out| el primero que entró es el primero en salir).</p>
+                 <h4>Las operaciones asociadas a las pilas son</h4>
+                <ul>
+                    <li>
+                        <h5>VaciaFila(Fila)</h5>
+                        <p>Devuelve un valor de verdad (verdadero o falso) que indica si Fila tiene o no tiene elementos. Si tiene es falso, si no tiene, es verdadero</p>
+                    </li>
+                    <li>
+                        <h5>Primero(Fila)</h5>
+                        <p>Devuelve el elemento que está al inicio de la fila</p>
+                    </li>
+                    <li>
+                        <h5>Agregar(Fila1, elemento)</h5>
+                        <p>Agrega un elemento al final de Fila 1</p>
+                    </li>
+                    <li>
+                        <h5>Desagregar(Fila1)</h5>
+                        <p>Elimina el primer elemento de la Fila1</p>
+                    </li>
+                </ul>
+            </article>
+            <article id="variables" class="subject-item">
+                <h3>Variables</h3>
+                <p></p>
+                <ul>
+                    <li><h4>Alcance (Scope) </h4>
+                        <p>Define quienes pueden acceder al valor de esa variable</p>
+                    </li>
+                    <li>
+                        <h4>Tiempo de vida</h4>
+                        <p>Es el tiempo desde que se declara la variable hasta que se libera de la memoria</p>
+                    </li>
+                    <li> <h4>Nombre</h4>
+                        <p>Define bajo qué nombre se puede utilizar a la variable, si no tiene nombre, requiere que otra pueda acceder a su contenido o dirección.</p>
+                    </li>
+                    <li>
+                        <h4>Dirección en memoria</h4>
+                        <p>Toda variable tiene una direccion en memoria asociada</p>
+                    </li>
+                    <li>
+                        <h4>Valor</h4>
+                        <p>Toda variable almacena un valor, puede ser uno asignado por el usuario o uno ya establecido. El programador debe controlar que los valores con los que opere tengan un sentido semántico en su programa. </p>
+                    </li>
+                </ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tipo Primitivo</th>
+                            <th>Descripcion</th>
+                            <th>Rango</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Integer</td>
+                            <td>Este tipo de dato representa a los números enteros y define los axiomas asociados a cada operacion aritmética. 
+                            </td>
+                            <td>-32768 a 32767</td>
+                        </tr>
+                        <tr>
+                            <td>Real</td>
+                            <td>Este tipo de dato representa a los números representados con coma flotante y define los axiomas asociados a cada operacion aritmética. 
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Boolean</td>
+                            <td>Este tipo de dato representa a los valores de verdad: verdadero o falso a través de los números 0 y 1. 0 se adjudica al valor de verdad: falso y 1 a verdadero. Se definen las operaciones con este tipo de dato a través de la lógica de las álgebras de boole.
+                            </td>
+                            <td>True, False</td>
+                        </tr>
+                        <tr>
+                            <td>Char</td>
+                            <td>Este tipo de dato representa a los caracteres, desde caracteres especiales hasta letras y numeros. Un arreglo de este tipo de dato es lo que comunmente se conoce en programación como el tipo de dato: String o cadena de caracteres. </td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+            <article id="functions" class="subject-item">
+
+                <h3>Funciones</h3>
+                <p>Son bloques de código que devuelven un único valor y si son invocables permiten la modularización y reutilización del código. </p>
+                <h5>Concepto de invocación</h5>
+                <p>Para que el programa ejecute nuestra función o procedimiento debemos asegurarnos de "llamarlo". Llamar a una función o procedimiento en la  jerga de programación es "invocar". </p>
+                <h5>¿Qué hace nuestro programa cuando invocamos a una función o procedimiento?</h5>
+                <p>Mira a qué función/procedimiento queremos llamar, va a ver si está a su alcance esa función, lo va a buscar, mirá que información le queremos pasar, mirá si algo de esa información queremos que la modifique o no, carga la función y comienza a ejecutarla en la siguiente línea a la invocación.</p>
+                <h5>¿Cómo llamamos a una función?</h5>
+                <p>Debemos copiar el nombre de la función y entre paréntesis poner las variables que queremos pasarle. Las variables serán la información que necesitará conocer esta función del programa para ejecutarse correctamente, estas variables NO serán modificadas. Es importante que no la tenga de antemano porque si no es información repetida o ambigua, y si la instrucción se vuelve ambigua en el programa, es ambigua para la máquina y no sabrá que hacer, pudiendo ocasionar comportamientos inesperados.</p>
+                <p>Como las funciones devuelven un valor, este valor debe ser almacenado en algún lado. Para ello debemos indicar que lo que devuelve la función se va a guardar en una variable.</p>
+
+                <h4>Parámetro</h4>
+                <p>Los parámetros es la información que intercambian los procedimientos y funciones en el programa. Estos parámetros los encontramos en dos categorías principales: los paráemetros reales y los parámetros formales. </p>
+
+                <h5>Parámetros reales</h5>
+                <p>Son los que tienen la información original y los encontramos en la invocación. Pueden ser pasados por medio de variables, como valores constantes, resultados de otras funciones o como operaciones aritméticas. Si son pasados como variables el sólo pasaje de información no determina cómo son esos parámetros, será determinado por la función o procedimiento; por cualquiera de los otros métodos, el pasaje será por copia-valor porque los resultados no pueden ser almacenados. </p>
+
+                <h5>Parámetros formales</h5>
+                <p>Son aquellos parámetros que encontramos en la definición de la función o procedimiento. Tienen los nombres con los que va a operar nuestra unidad.</p>
+
+                <h4>Pasaje de parámetros</h4>
+                <ul>
+                    <li>
+                        <h5>Por copia-valor</h5>
+                        <p>Copia el valor que tenga el parámetro real en el parámetro formal creando una variable local en la función o procedimiento pero el valor del parámetro real no se ve modificado.</p>
+                    </li>
+                    <li>
+                        <h5>Por copia-resultado</h5>
+                        <p>El parámetro real toma el valor del parámetro formal una vez que termina la ejecución de la función invocada.</p>
+                    </li>
+                    <li>
+                        <h5>Pasaje de parámetros por referencia</h5>
+                        <p>El parámetro real se modificará durante la ejecución del procedimiento. </p>
+                    </li>
+                    <li> 
+                        <h5>Pasaje de parámetros por copia-valor-resultado</h5>
+                        <p>El parámetro real es recibido por el procedimiento, este opera y lo modifica. El resultado de la modificación se verá una vez finalizada la ejecución del procedimiento. </p>
+                    </li>
+                </ul>
+            </article>
+            <article id="procedures" class="subject-item">
+                <h3>Procedimientos</h3>
+                <p>Es una secuencia de instrucciones que pueden ejecutarse para resolver una tarea.</p>
+                
+            </article>
+            <article id="structure-diagram" class="subject-item">
+                <h3>Diagrama de Estructura</h3>
+                <p>Es una representación visual de un programa que utiliza la estrategia de divide y conquista. </p>
+                <p>
+                    Cada módulo tiene como objetivo resolver un subproblema independiente con la información que obtiene por medio de las cuplas de entrada y devuelve la información procesada por medio de cuplas de salida. 
+                </p>
+                <p>La correcta combinación de los módulos resueltos, genera la solución que buscaba el programa original.</p>
+                <h4>Cuplas</h4>
+                <p>es el mecanismo mediante el cual los módulos de un Diagrama de Estructuras se envían la información.</p>
+
+                <ul>
+                    <li>Cupla de entrada</li>
+                    <li>Cupla de salida</li>
+                    <li>Cupla de entrada-salida</li>
+                </ul>
+               
+                <h5>Cuplas de entrada</h5>
+                <p>Las cuplas de entrada son los parámetros por copia-valor que recibe un procedimiento o función. Es información que no va a ser modificada luego de la finalización del módulo.</p>
+                <h5>Cuplas de salida</h5>
+                <p>Las cuplas de salida son parámetros del tipo copia-resultado. Se utilizan en el diagrama de estructura para indicar la existencia de funciones en el programa.</p>
+                <h5>Cuplas de entrada-salida</h5>
+                <p>Se utilizan para indicar que la variable que reciba ese módulo como información, será modificada. Estas cuplas se utilizan tanto para parámetros de copia-valor-resultado, como para parámetros pasados por referencia. </p>
+            </article>
+            <article id="arrays" class="subject-item">
+                <h3>Arreglos</h3>
+                <p>
+                    Un arreglo es un tipo de dato estructurado. Tiene una dimensión y un tamaño asociado, que determina la cantidad de elementos que puede almacenar. 
+                </p> 
+                <p>Los elementos se almacenan en celdas que tienen asignada una posición. Las posiciones tienen un rango determinado que empieza desde 0 ó 1 (dependiendo el lenguaje) hasta la posición de la máxima cantidad de elementos elegida. Se accede al contenido de cada celda a través de las posiciones válidas del arreglo. Es importante distinguir entre la posición del arreglo y el contenido de la celda. 
+                </p>
+
+            </article>
+            <article id="shift-algorithms"class="subject-item">
+                <h3>Corrimientos</h3>
+                <p>Es un algoritmo que genera un desplazamiento de uno o más elementos en una dirección específica. Este desplazamiento se realiza "pisando" un valor adyacente, es decir, sobreescribiendolo, <span>se pierde el valor anterior</span>. <span>No intercambia valores con la celda adyacente</span></p>
+                <h4>Corrimiento a izquierda</h4>
+                <p>El desplazamiento en el arreglo es hacia la izquierda. <span>Miramos hacia donde se mueve el bloque más grande de elementos</span></p>
+                <p>Una técnica sencilla para generar un corrimiento a izquierda en un arreglo es posicionarnos con una variable índice en la celda desde la que queremos que se note ese corrimiento y crear el efecto de la siguiente frase: <span>Donde estoy, se vuelve el siguiente</span> y repetir esto hasta que no tengamos un siguiente o hasta el límite que nos hayamos marcado.</p>
+                <h4>Corrimiento a derecha</h4>
+                <p>El desplazamiento en el arreglo es hacia la derecha. <span>Miramos hacia donde se mueve el bloque más grande de elementos</span></p>
+                <p>Una técnica sencilla para generar un corrimiento a derecha en un arreglo es posicionarnos con una variable índice en la celda desde la última posición en la que estaría la cadena de elementos que queremos mover y desde este final debemos crear el efecto de la siguiente frase: <span>Donde estoy, se vuelve el anterior</span> y repetir esto hasta que no tengamos un anterior o hasta el límite que nos hayamos marcado.</p>
+
+            </article>
+            <article id="sortings-algorithms" class="subject-item">
+                <h3>Ordenamientos</h3>
+                <p>Un ordenamiento consiste en ordenar una tipo de dato estructurado de acuerdo a un criterio establecido con una secuencia de pasos especifica. Existen diferentes tipos de ordenamientos adecuados para cada estructura de datos y con diferentes complejidades a la hora de programarlos o utilizarlos. Los algoritmos de ordenamiento básicos en arreglos estáticos son: Burbujeo, Selección e Inserción. </p>
+                <h4>Burbujeo</h4>
+                <p>La idea básica del ordenamiento de la burbuja es recorrer la lista de elementos en forma secuencial varias veces.</p>
+                <p>
+                    En cada paso se compara un elemento del conjunto con su sucesor e intercambia los dos elementos si no están en el orden adecuado.
+                </p>
+                <p> Los elementos suben por la secuencia de elementos durante los intercambios, como si fueran pequeñas "burbujas".</p>
+                <h5>Pasos</h5>
+                <ol>
+                    <li>Realiza n-1 pasadas para arreglar un arreglo de N elementos.</li>
+                    <li>Mueve los elementos de a un lugar, es decir, compara los adyacentes y los intercambia si están desordenados.</li>
+                    <li>Al final de la primer pasada, se habrán comparado N-1 elementos y el elemento más grande (o más chico) se fue arrastrando hasta el final.</li>
+                    <li>En la segunda pasada, el segundo más grande (o más chico) queda en la posición N-1.. Y así siguiendo</li>
+                </ol>
+                <h4>Selección (para ordenar ascedentemente)</h4>
+                <p>Para ordenar un arreglo A de n elementos se busca el menor (o mayor) y se lo ubica al comienzo (en A[1]). A continuación se busca el segundo y selo ubica en A[2] y así sucesivamente…..hasta llegar al anteúltimo elemento (el último elemento queda ordenado automáticamente)</p>
+                <h5>Pasos</h5>
+                <ol>
+                    <li>Se busca el elemento más pequeño del arreglo</li>
+                    <li> Se intercambia con el elemento ubicado en la primera posición de la lista.</li>
+                    <li>Se busca el segundo elemento más pequeño de la lista.</li>
+                    <li>Se intercambia con el elemento que ocupa la segunda posición en la lista.</li>
+                    <li>Se repite este proceso hasta que se haya ordenado toda la lista. (Al llegar al anteúltimo el último queda ordenado)</li>
+                </ol>
+                
+                <h4>Inserción</h4>
+                <p>Este algoritmo va ordenando al arreglo tomando cada elemento insertándolo de manera ordenada en su lugar.</p>
+                <h5>Pasos</h5>
+                <ol>
+                    <li>Considera al primer elemento como ordenado. </li>
+                    <li>Luego toma el segundo y lo compara con el que ya está: si es mayor, lo pone a la derecha, y si es menor a la izquierda.</li>    
+                    <li>Después el tercero y la compara con los que ya están ordenados hasta encontrar su posición.</li>
+                    <li>Se continúa haciendo esto, insertando cada elemento en la posición que le corresponde hasta llegar al último.</li>
+                </ol>
+            </article>
+            <article id="search-algorithms" class="subject-item">
+                <h3>Búsquedas</h3>
+
+                <h4>Búsqueda lineal</h4>
+                <p>El arreglo puede estar ordenado o desordenado</p>
+                <p>Describe la búsqueda elemento a elemento de un elemento en un arreglo dado desde una posición determinada</p>
+                <p>La búsqueda de un elemento comienza a partir de una posición válida del arreglo hasta encontrarlo o llegar a un límite del arreglo como puede ser irse de rango. Si la búsqueda no encuentra el elemento, se habrán recorrido uno por uno los elementos hasta llegar al final. Si se encontró la ejecución terminará antes de esto.</p>
+                <p>La idea principal es que inicie donde inicie la búsqueda, sin importar si va de derecha a izquierda o de izquierda a derecha, siempre se seguirá uno de esos dos órdenes de búsqueda y se mirará elemento a elemento.</p>
+
+                <h4>Búsqueda binaria</h4>
+                <p>Para este tipo de búsqueda el arreglo debe estar ordenado.</p>
+                <p>Es un algoritmo que particiona el arreglo por mitades para acelerar la búsqueda de un determinado elemento. Es mucho más eficiente que la búsqueda lineal y la implementación puede ser recursiva o iterativa, si es recursiva sigue los principios de la técnica de diseño de divide y conquista</p>
+            </article>
+            <article id="matrices" class="subject-item">
+                <h3>Matrices</h3>
+                <p>Es un arreglo de arreglos. Podemos visualizar una matriz como un arreglo de arreglos, por tanto, tiene más de una dimensión. La representación más común es una matriz de dos dimensiones que se visualiza como una grilla o tabla, donde tenemos filas y columnas. Para acceder al contenido de la celda debemos indicar una fila y columna válida para la matriz</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Columna 1</th>
+                            <th>Columna 2</th>
+                            <th>Columna 3</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Fila 1</th>
+                            <td>Fila 1 - Columna 1</td>
+                            <td>Fila 1 - Columna 2</td>
+                            <td>Fila 1 - Columna 3</td>
+                        </tr>
+                        <tr>
+                            <th>Fila 2</th>
+                            <td>Fila 2 - Columna 1</td>
+                            <td>Fila 2 - Columna 2</td>
+                            <td>Fila 2 - Columna 3</td>
+                        </tr>
+                        <tr>
+                            <th>Fila 3</th>
+                            <td>Fila 3 - Columna 1</td>
+                            <td>Fila 3 - Columna 2</td>
+                            <td>Fila 3 - Columna 3</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+        <section id="dinamic-table"> 
+            <button id="btn-add-resource">Agregar recurso</button>
+            <dialog id="modal-resource">
+                <button id="btn-close-form-popUp">Cerrar</button>
+                <form id="resource-form">
+                    
+                    <label for="resource-title">Título</label>
+                    <input id="resource-title" type="text" name="title" placeholder="Agregar titulo" required>
+                    <label for="resource-url">Link al recurso</label>
+                    <input id="resource-url" type="text" name="url" placeholder="Ingrese la url del recurso" required>
+                    <label for="resource-type">Tipo</label>
+                    <select id="resource-type" name="type" required>
+                        <option>Vídeo</option>
+                        <option>Documento</option>
+                        <option>Videojuego</option>
+                        <option>Quiz</option>
+                        <option>Código</option>
+                        <option>Bibliografía</option>
+                    </select>
+                    <label for="resource-level">Nivel</label>
+                    <select id="resource-level" name="level" required>
+                        <option>Básico</option>
+                        <option>Intermedio</option>
+                        <option>Avanzado</option>
+                    </select>
+                    <label for="resource-purpose">Objetivo</label>
+                    <input id="resource-purpose" type="text" name="purpose" placeholder="Ingrese el objetivo a alcanzar al utilizar el recurso">
+                    <label for="resource-description">Descripción</label>
+                    <input id="resource-description" type="text" name="description" placeholder="Ingrese la descripción del recurso">
+                    <label for="resource-topic">Tema</label>
+                    <input id="resource-topic" type="text" name="topic" placeholder="Ingrese el tema que trata el recurso" required>
+                    <button id="btn-add-or-modify-resource"></button>
+                </form>
+            </dialog>
+
+
+            <section id="filter-section">
+                <select id="type-filter" name="type"  required>
+                    <option>video</option>
+                    <option>documento</option>
+                    <option>juego</option>
+                    <option>quiz</option>
+                    <option>codigo</option>
+                    <option>bibliografia</option>
+                </select>
+                <select id="level-filter" name="level"  required>
+                    <option>basico</option>
+                    <option>intermedio</option>
+                    <option>avanzado</option>
+                </select>
+                <button id="btn-clean-filter" >Limpiar filtros</button>
+                <button id="btn-filter" >Filtrar</button>
+            </section>
+            
+            <table id="resources-table" data-course="programming-introduction" data-unit="unidad-1"><!--usamos data no corromper el html y con esta informacion reconocer curso y unidad desde javascript-->
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Recurso</th>
+                        <th>Tipo</th>
+                        <th>Dificultad</th>
+                        <th>Descripción</th>
+                        <th>Objetivo</th>
+                        <th>Tema</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="body-resources">
+                </tbody>
+            </table>
+            <button id="btn-before-page">Anterior</button>
+            <button id="btn-next-page">Siguiente</button>
+        </section>
+    </main>
+    <footer id="page-footer">
+        <a href="https://www.linkedin.com/in/julieta-watts/" target="_blank">
+            <figure>
+                <img src="../img/InBug-White.png" alt="icono-linkedIn" >
+                <figcaption>LinkedIn Julieta</figcaption>
+            </figure>
+            </a>
+        <a href="https://www.linkedin.com/in/sofia-niyen" target="_blank">
+            <figure>
+                <img src="../img/InBug-White.png" alt="icono-linkedIn" >
+                <figcaption>LinkedIn Sofía</figcaption>
+            </figure>
+        </a>
+    </footer>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/course.js"></script>
+    <script type="text/javascript" src="../js/mockapi.js"></script>
+</body>
+</html>

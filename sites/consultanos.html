@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExaWiki</title>
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <link rel="stylesheet" href="../css/consultanos.css">
+ 
+</head>
+<body id="fondo">
+    <header id="page-header">
+        <nav id="navbar-main">
+            <ul>
+                <li><button id="open-menu" class="menu-button" type="button">
+                    <img src="../img/lineasMenuNegro.png" alt="tres lineas negras"></button></li>
+                <li><a href="../index.html"><img class="logo" src="../img/logo2.png" alt="Exawiki con un sigma en lugar de la E"></a></li>
+                <li>
+                    <label for="switch-light-dark"> <img id="theme-img" src="../img/lunitauwu.png" alt="luna"> </label>
+                    <input id="switch-light-dark" type="button" alt="selector de tema claro oscuro">
+                </li>
+                </ul>
+        </nav>
+        <nav id="navbar-topics">
+            <ul class="nav-menu">
+                <li><a href="../index.html">MATERIAS</a></li>
+                <li><a href="consultanos.html">CONSULTANOS</a></li>
+                <li><a href="sobre_nosotras.html">SOBRE NOSOTRAS</a></li>
+            </ul>  
+        </nav>
+    </header>
+    <main id="page-main">
+        <h1>Consultanos</h1>
+        <section>
+            <form id="formulario">
+                <label for="user-name">Nombre</label>
+                <input id="user-name" placeholder="Maria Perez" type="text">
+                <label for="question-topic">Asunto*</label>
+                <input id="question-topic" class="input" placeholder="Consulta sobre arreglos en java" type="text" required> 
+                <label for="user-email" >Email*</label>
+                <input id="user-email" placeholder="example@gmail.com" type="email" required>
+                <label for="user-question">Mensaje*</label>
+                <textarea id="user-question" class="input" placeholder="Escribe tu consulta" required></textarea>
+                <p>* Campo obligatorio</p>
+                <div id="captcha-container">
+                    <h5>Complete el captcha para enviar el mensaje.</h5>
+                    <p id="captcha"></p>
+                    <input type="text" id="user-reply">
+                    <p id="captcha-inform" class="captcha-result"></p>
+                </div>
+                <button class="button" type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+    <footer id="page-footer">
+        <a href="https://www.linkedin.com/in/julieta-watts/" target="_blank">
+            <figure>
+                <img src="../img/InBug-White.png" alt="icono-linkedIn" >
+                <figcaption>LinkedIn Julieta</figcaption>
+            </figure>
+            </a>
+        <a href="https://www.linkedin.com/in/sofia-niyen" target="_blank">
+            <figure>
+                <img src="../img/InBug-White.png" alt="icono-linkedIn" >
+                <figcaption>LinkedIn Sofía</figcaption>
+            </figure>
+        </a>
+    </footer>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/consultanos.js"></script>
+    <script type="text/javascript" src="../js/menu_desplegable_principal.js"></script>
+</body>
+</html>

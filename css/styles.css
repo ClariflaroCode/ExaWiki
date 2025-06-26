@@ -1,0 +1,230 @@
+#fondo {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* HEADER - navigation bars */
+#page-header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    align-items: center;
+    z-index: 10;
+}
+
+.logo {
+    height: 6vh;
+    width: auto;
+}
+
+.menu-button{
+    border: 1px solid black;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    height: 40px ;
+    width: 40px;
+    border-radius: 50%;
+    padding: 0;
+    background-color:#E9A5F1;
+}
+
+.menu-button img {
+    width: 80%;
+}
+
+#theme-img {
+    height: 4vh; /* un poco mas petit que el logo */
+    width: auto;
+}
+
+/* Aca lo que hago es ocultar la cajita del checkbox
+   SIN quitarle la funcionalidad (como haria un display:none)*/
+#switch-light-dark {
+    /* saca el checkbox del flujo, no ocupa espacio */
+    position: absolute;
+    /* lo hacemos invisible literalmente, reducido a nada */
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+#navbar-main ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #C68EFD;
+    list-style: none;
+    margin:0;
+    padding: 0;
+}
+
+#navbar-main li {
+    justify-content: center;
+}
+
+.nav-menu {
+    display:none;
+    flex-direction: column;
+    justify-content: center;
+    list-style: none; /*le saca los puntitos*/
+    gap: 10%;
+    font-size: xx-large;
+    font-weight: bolder;
+    margin: 0;
+}
+
+.nav-menu li {
+    border-bottom: 1px solid #58206D;
+}
+
+.nav-menu.show   {
+    display: flex;
+    height: 100vh;
+}
+
+/* MAIN */
+h1, h2, h3, h4, h5, h6{
+    margin-top: 0;
+}
+
+#page-main{
+    /* agregamos este padding porque el header al quedar en la capa mas alta de la pagina
+       tapa el contenido del main.*/
+    padding-top: 10vh;
+    flex:1;
+}
+
+a {
+    text-decoration: none; /*le borro el underline*/
+}
+
+.button{
+    margin-bottom: 5%;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 2%;
+    background-color:#E9A5F1;
+    color: #7B1A9E;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+/* Cambios de tema claro - oscuro */
+
+.oscuro #navbar-main ul, .oscuro #page-footer {
+    background-color: #7B1A9E;
+    color: white;
+}
+
+.claro #navbar-main ul, .claro #page-footer {
+    background-color: #C68EFD;
+    color: #5C1476;
+}
+
+.claro #navbar-topics {
+    background-color: #E9A5F1;
+    color: #5C1476;
+}
+.oscuro #navbar-topics {
+    background-color: #A952CB;
+}
+
+.claro #page-main {
+    background-color: #FFD6F5;
+    color: #7B1A9E;
+
+}
+
+.oscuro #page-main {
+    background-color: #58206D;
+    color: white;
+}
+
+.claro a {
+    color:#7B1A9E;
+}
+
+.oscuro a {
+    color: white;
+}
+
+/* Aca pongo lo de las cards SUJETO A MODIFICACION
+   para mi deberia ir en index pero no supe como hacer
+   por el tema del body, no se cual tomaria el js o si toma 
+   ambos css */
+
+
+/*FOOTER*/
+#page-footer figure{
+    word-wrap: break-word;
+    width: 70%;
+}
+
+#page-footer img {
+    height: 25px;
+}
+
+#page-footer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    position: static;
+}
+
+#page-footer img, #page-footer figure, #page-footer figcaption, #page-footer a { 
+    margin: 0;
+    padding: 0;
+}
+
+#page-footer a {
+    margin: 1% 0%;
+    font-size: smaller;
+}
+
+/* MediaQuery (: */
+
+@media (width >= 768px){
+    
+    .nav-menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        font-size: large;
+    }
+
+    .nav-menu li {
+        border: none;
+        align-content: center;
+        padding: 5px;
+    }
+
+    .nav-menu li:hover{
+        background-color: #C68EFD;
+    }
+
+    .logo{
+        width: auto;
+        height: 8vh;
+    }
+  
+    #navbar-main ul{
+        justify-content: space-around;
+    }
+    
+    #page-main{
+        /* agregamos este padding porque el header al quedar en la capa mas alta de la pagina
+       tapa el contenido del main.*/
+        padding-top: 10vh;
+    }
+
+    /* en desktop el boton no se ve*/
+    #open-menu{
+        display: none;
+    }
+}

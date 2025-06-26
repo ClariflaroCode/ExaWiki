@@ -1,0 +1,115 @@
+#page-main {
+    text-align: center;
+}
+
+#formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    gap: 5px;
+}
+
+#formulario input{
+    width: 80%;   
+    border-radius: 5px;
+    border-color: white;
+}
+#user-question{
+    width: 80%;
+    height: 20vh;
+    resize: none;
+    overflow-y: scroll;
+    border-radius: 5px;
+    border: 2px inset white;
+}
+
+#captcha-container{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5%;
+    border: 3px solid #E9A5F1;
+    background-color: #E9A5F1;
+    margin: 5%;
+    width: 80%;
+    color: #7B1A9E;
+    border-radius: 5px;
+}
+
+#captcha-container p, #captcha-container h5{
+    margin: 2px;
+}
+
+.captcha-result{
+    color: green ;
+}
+.captcha-result-incorrect {
+    color:red;
+}
+
+#captcha {
+    font-weight: bolder;
+}
+.button:hover {
+    box-shadow:  1px 1px 10px whitesmoke;
+}
+button:active {
+    background-color: violet;
+}
+input:focus  {
+    outline: none;
+    border: 3px solid violet;
+    box-shadow: 0 0 4px violet;
+}
+#user-question:focus {
+    outline: none;
+    border: 1px solid violet;
+    box-shadow: 0 0 2px violet; 
+}
+.oscuro input:focus {
+    outline: none;
+    border: 3px solid pink;
+    box-shadow: 0 0 4px pink; 
+}
+.oscuro #user-question:focus {
+    outline: none;
+    border: 1px solid pink;
+    box-shadow: 0 0 5px pink;
+}
+/* breakpoint desktop */
+@media (width >= 765px){
+    #formulario{
+        gap: 10px;
+    }
+    
+    #formulario input{
+        width: 40%;
+    }
+    
+    #user-question{
+        width: 40%;
+        height: 30vh;
+        resize: none;
+        overflow-y: scroll;
+    }
+
+    #captcha-container{
+        width: 40%;
+        margin: 2%;
+        padding: 2%;
+    }
+    #page-main h1 {
+        margin-top: 5vh;
+    }
+    #captcha-container p, #captcha-container h5{
+        margin: 5px;
+        font-size: medium;
+    }
+    .button {
+        height: 10px;
+    }
+
+} 
