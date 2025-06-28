@@ -1,5 +1,4 @@
-document.addEventListener("DOMContentLoaded", iniciar);
-function iniciar() {
+function iniciarMockapi() {
     const urlMaterialComplementario = 'https://685325640594059b23d03fe2.mockapi.io/material-complementario'; 
     const course = document.getElementById("resources-table").dataset.course; //nos traemos el curso del DOM
     const unit = document.getElementById("resources-table").dataset.unit; //nos traemos la unidad del DOM
@@ -22,9 +21,10 @@ function iniciar() {
     }
 
     document.getElementById("btn-before-page").addEventListener("click", (event) => {
-        page--;
-        paginar(event);
-        //hay que ver que no se pueda activar si no hay elementos para una pagina anterior
+        if (page > 1) { //no existe pagina cero. 
+            page--;
+            paginar(event);
+        }
 
     })
     document.getElementById("btn-next-page").addEventListener("click", (event) => {
@@ -186,16 +186,10 @@ function iniciar() {
                     
                 let resources = await response.json();
                 console.log(resources);
-                if (resources.length == 0) {
+                if (resources.length == 0) { //mockapi no tiene un count en su versión gratuita para saber la cantidad de elementos, lo que obliga a consultar por un siguiente para saber si hay o no hay elementos. 
                     console.log(page);
                     const buttonActivated = event.target; //con esto consigo el boton que activó el evento. Lo usamos para saber si es el anterior o el siguiente, y así revertir el incremento o decremento. 
-                    if (buttonActivated.id === "btn-before-page") {
-                        page++;
-                        console.log(page);
-                        console.log('no hay elementos para mostrar');
-                        return; //
-                    }
-                    else if (buttonActivated.id === "btn-next-page"){
+                    if (buttonActivated.id === "btn-next-page"){
                         page--; //se tocó el botón para la página siguiente. Este es un parche feo, pero necesito saber si hay más elementos el la siguiente pagina o si no, y si no lo hay tengo que dejar el valor de page en la pagina actual. 
                         console.log(page);
                         console.log('no hay elementos para mostrar');

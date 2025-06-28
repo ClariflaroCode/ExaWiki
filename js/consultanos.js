@@ -1,4 +1,3 @@
-document.addEventListener("DOMContentLoaded", iniciar);
 function iniciar(){
     document.getElementById("formulario").addEventListener("submit", verifyCaptcha); //esto se hace así para que salgan los "completa este campo" del formulario si intentas enviar el captcha sin haberlos completado. Con el evento click en el boton directamente no pasaba, capaz se puede igual.  
     let indice; 
