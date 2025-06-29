@@ -1,5 +1,5 @@
-document.addEventListener("DOMContentLoaded", iniciar);
-function iniciar (){
+//document.addEventListener("DOMContentLoaded", iniciar);
+//function iniciar (){
     let courseBtn = document.querySelector("#course-menu");
     let courseList = document.querySelector(".nav-list");
     let courseItems = document.querySelectorAll(".nav-item a");
@@ -18,4 +18,4 @@ function iniciar (){
     });
 
 
-}
+//}

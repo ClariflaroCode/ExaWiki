@@ -220,7 +220,6 @@ a {
     #page-main{
         /* agregamos este padding porque el header al quedar en la capa mas alta de la pagina
        tapa el contenido del main.*/
-        padding-top: 10vh;
     }
 
     /* en desktop el boton no se ve*/

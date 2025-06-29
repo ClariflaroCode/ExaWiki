@@ -144,7 +144,7 @@ input:focus {
     button {
         padding: 10px;
     }
-    #page-main{
+    .courses-section{
         display: flex;
         flex-direction: column;
         padding-top: 7vh;

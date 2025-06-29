@@ -1,4 +1,4 @@
-#page-main {
+.consultanos {
     text-align: center;
 }
 
@@ -101,7 +101,7 @@ input:focus  {
         margin: 2%;
         padding: 2%;
     }
-    #page-main h1 {
+    .consultanos h1 {
         margin-top: 5vh;
     }
     #captcha-container p, #captcha-container h5{

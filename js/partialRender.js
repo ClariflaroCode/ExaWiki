@@ -34,12 +34,12 @@ function iniciar() {
             "js": [],
             "loaded": false
         },
-        "programming_introduction.html": {
+        "sites/programming_introduction.html": {
             "css": [ "../css/course.css"],
             "js": ["../js/course.js","../js/mockapi.js"],
             "loaded": false
         },
-        "web_1.html":{
+        "sites/web_1.html":{
             "css": [ "../css/course.css"],
             "js": [ "../js/course.js"],
             "loaded": false
@@ -62,11 +62,25 @@ function iniciar() {
                 let html = await response.text(); 
                 main.innerHTML = html; //traigo el HTML correspondiente. 
                 //removeEventListener()
-                if (newString.endsWith('programming_introduction.html')){ //se puede hacer esto harcodeado para llamar a la funcion que llama a todo de cada html. 
-                    iniciarMockapi();
+                if (newString.endsWith('courses.html')){ //se puede hacer esto harcodeado para llamar a la funcion que llama a todo de cada html. 
+                    let links = document.querySelectorAll('#home .link'); 
+                    asignarPartialRender(links);
                 }
-                let links = document.querySelectorAll('#home .link'); //todas las paginas principales tienen un 
-                asignarPartialRender(links);
+                if (!document.querySelector("#course-menu") && (newString.endsWith('programming_introduction.html') || newString.endsWith('web_1.html'))){ //se puede hacer esto harcodeado para llamar a la funcion que llama a todo de cada html. 
+                    let header = document.querySelector('header');
+                    let indexCourseButton = document.createElement('button');
+                    indexCourseButton.innerHTML = "temas";
+                    indexCourseButton.id = "course-menu";
+                    indexCourseButton.class = "button"; 
+                    header.appendChild(indexCourseButton);
+                } else {
+                    let header = document.querySelector('header');
+                    const botonTemas = document.querySelector("#course-menu");
+                    if (botonTemas != null) {
+                        header.removeChild(botonTemas);
+                    }
+                }
+                
                 
                 //window.location.assign(url);
                 //window.history.pushState(data, "", url);
