@@ -1,4 +1,4 @@
-//function iniciarMockapi() {
+function iniciarMockapi() {
     const urlMaterialComplementario = 'https://685325640594059b23d03fe2.mockapi.io/material-complementario'; 
     const course = document.getElementById("resources-table").dataset.course; //nos traemos el curso del DOM
     const unit = document.getElementById("resources-table").dataset.unit; //nos traemos la unidad del DOM
@@ -298,4 +298,4 @@
     }
     limpiarFiltros(); //deberían irse los filtros al cargar la pagina... 
     paginar(event); 
-//}
+}

@@ -1,5 +1,5 @@
-document.addEventListener("DOMContentLoaded", iniciar);
-function iniciar (){
+document.addEventListener("DOMContentLoaded", generateToggleMainMenu);
+function generateToggleMainMenu (){
     document.getElementById("open-menu").addEventListener("click", menuDesplegablePrincipal);
 
     function menuDesplegablePrincipal() {

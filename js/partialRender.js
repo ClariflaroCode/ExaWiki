@@ -18,31 +18,33 @@ document.addEventListener("DOMContentLoaded", iniciar);
  * 
  */
 function iniciar() {
+    let currentJsLoaded = []; //ver si se puede hacer con un objeto. 
+    let currentCSSLoaded = []; //x2
     const pages = {
         "sites/courses.html": {
             "css": ["../css/index.css" ],
-            "js": [],
-            "loaded": false
+            "js": {}
         },
         "sites/consultanos.html": {
             "css": ["../css/consultanos.css"],
-            "js": [ "../js/consultanos.js"],
-            "loaded": false
+            "js":  {"../js/consultanos.js":"generateCaptchaScript" }
         },
         "sites/about_us.html": {
             "css": ["../css/sobre_nosotras.css"],
-            "js": [],
-            "loaded": false
+            "js": {}
         },
         "sites/programming_introduction.html": {
             "css": [ "../css/course.css"],
-            "js": ["../js/course.js","../js/mockapi.js"],
-            "loaded": false
+            "js": 
+                {
+                    "../js/course.js":"generateIndexCourseMenu",
+                    "../js/mockapi.js": "iniciarMockapi"
+                }//RE FLASHERO: "functionsToActivate": [iniciarMockapi] pero necesito que se ejecute antes la funcion... 
         },
         "sites/web_1.html":{
             "css": [ "../css/course.css"],
-            "js": [ "../js/course.js"],
-            "loaded": false
+            "js": { "../js/course.js": "generateIndexCourseMenu"}
+        
         }
 
     }    //creamos un vínculo para saber que hay que cargar. 
@@ -88,12 +90,15 @@ function iniciar() {
                 
                 
                 const page = pages[url];//accedemos a partir de la clave html que queremos para poder acceder al valor de objeto que queremos. Es más eficiente. 
-                if(page["loaded"] == false) {
+                /*if(page["loaded"] == false) {
                     suscribirJavaScript(page);
                     suscribirCSS(page);    
                     page["loaded"] = true;
-                }
-                            
+                }*/
+                suscribirJavaScript(page);
+                suscribirCSS(page);  
+
+                   
             }
         } catch (error) {
             console.log(error);
@@ -130,32 +135,50 @@ function iniciar() {
         
         let divOfScripts = document.querySelector("#scripts"); //lo importo acá y elimino las funciones de DOMContentLoaded para no hardcodearlas acá para que se activen (igual todas se llaman iniciar) o las llamo acá y dejo lo de DOMContentLoaded?
         divOfScripts.innerHTML = "";
-        for (let jsImport of jsToImport) {
-            let tagScript = document.createElement('script');
-            tagScript.type = "text/javascript";
-            tagScript.src = jsImport;
-            /*script.onload = () => {
-                if (typeof iniciar === 'function') iniciar(); //  de esta forma se podría llamar a las funciones de los scripts si dejo el domcontentloaded. 
-            };*/
-            divOfScripts.appendChild(tagScript);
+        //currentJsLoaded = []; NO SE PUEDE HACER ESTO PORQUE LAS VARIABLES GLOBALES Y LA DECLARACION DE FUNCIONES GLOBALES VIVEN EN MEMORIA UNA VEZ QUE FUERON CONOCIDAS, HACER ESTO NO LAS BORRA, VOLVER A LLAMAR EL SCRIPT NO CAMBIA NADA PORQUE EL SCRIPT ES SOLO UNA REFERENCIA AL CODIGO, NO ES EL CODIGO QUE SE GUARDÓ EN MEMORIA, ESTE AUNQUE SE HAYA TERMINADO DE EJECUTAR NO LIBERA DE LA MEMORIA LAS DECLARACIONES DE VARIABLES O FUNCIONES GLOBALES. Y PINCHE JAVASCRIPT ORTIVA QUE NO ME VA A DEJAR NO HARDCODEAR EL LLAMADO A FUNCIONES.  
+        for (let jsImport in jsToImport) { //RECORRE POR CLAVES SI ES IN, SE USA EN OBJETOS.
+            const nombreFuncion = jsToImport[jsImport];
+            if (!currentJsLoaded.includes(jsImport)) {
+                let tagScript = document.createElement('script');
+                tagScript.type = "text/javascript";
+                tagScript.src = jsImport;
+                /*script.onload = () => {
+                    if (typeof iniciar === 'function') iniciar(); //  de esta forma se podría llamar a las funciones de los scripts si dejo el domcontentloaded. 
+                };*/
+                
+
+                tagScript.onload = () => {
+                    if (typeof window[nombreFuncion] === "function") {
+                        window[nombreFuncion]();
+                    }
+                }
+                divOfScripts.appendChild(tagScript);
+                currentJsLoaded.push(jsImport);
+                
+            } else {
+                if (typeof window[nombreFuncion] === "function") {
+                    window[nombreFuncion]();
+                } else {
+                    console.warn(`La función "${nombreFuncion}" no está definida todavía`);
+                }
+            }
+
         }
-
-
-
-
+        console.log(currentJsLoaded);
     }
-    function suscribirCSS(currentPageToLoad) { //necesita ser un fetch? 
+    function suscribirCSS(currentPageToLoad) { //ojo porque esto acumula css, que no hayan reglas que se contradigan. 
 
         let head = document.querySelector("head");
         let cssLinks = currentPageToLoad["css"]; //trae el arreglo con los nombres de los archivos css
         for (let csslink of cssLinks) {
-            let tagLink = document.createElement('link');
-            tagLink.rel = "stylesheet";
-            tagLink.href = csslink;
-            head.appendChild(tagLink);
+            if (!currentCSSLoaded.includes(csslink)){
+                let tagLink = document.createElement('link');
+                tagLink.rel = "stylesheet";
+                tagLink.href = csslink;
+                head.appendChild(tagLink);
+                currentCSSLoaded.push(csslink);
+            } 
         }
-        
-
     }
     
     partialRender("sites/courses.html");
