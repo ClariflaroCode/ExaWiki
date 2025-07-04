@@ -4,19 +4,19 @@ function iniciar() {
     let currentJsLoaded = [];
     let currentCSSLoaded = []; 
     const pages = {
-        "/courses.html": {
+        "courses.html": {
             "css": ["css/index.css" ],
             "js": {}
         },
-        "/consultanos.html": {
+        "consultanos.html": {
             "css": ["css/consultanos.css"],
             "js":  {"js/consultanos.js":"generateCaptchaScript" }
         },
-        "/about_us.html": {
+        "about_us.html": {
             "css": ["css/sobre_nosotras.css"],
             "js": {}
         },
-        "/programming_introduction.html": {
+        "programming_introduction.html": {
             "css": [ "css/course.css"],
             "js": 
                 {
@@ -24,7 +24,7 @@ function iniciar() {
                     "js/mockapi.js": "iniciarMockapi"
                 }
         },
-        "/web_1.html":{
+        "web_1.html":{
             "css": [ "css/course.css"],
             "js": { "js/course.js": "generateIndexCourseMenu"}
         
@@ -96,12 +96,12 @@ function iniciar() {
         handleHashChange();
     }
     const routes = {
-        404: "/pages/404.html",
-        "/":"/courses.html",
-        "/about_us": "/about_us.html",
-        "/consultanos": "/consultanos.html", 
-        "/programming_introduction": "/programming_introduction.html", 
-        "/web_1": "/web_1.html"
+        404: "404.html",
+        "/":"courses.html",
+        "/about_us": "about_us.html",
+        "/consultanos": "consultanos.html", 
+        "/programming_introduction": "programming_introduction.html", 
+        "/web_1": "web_1.html"
     }
     function handleHashChange() {
         const hash = window.location.hash || "#/";
