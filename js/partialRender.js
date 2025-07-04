@@ -1,49 +1,32 @@
 document.addEventListener("DOMContentLoaded", iniciar);
-//se puede hacer un head.appendChild(link) //para importar los css? //listo se peude
-//para importar los scripts, está bien lo que se hizo?
-//hardcodeamos los links de acuerdo a la URL con un case o alguna cosa así? o creamos un objeto o arreglo que de acuerdo al html de pagina importado lo busque por clave y se traiga su css y su script correspondiente ? 
-// con los link que tengan lo que nos traemos como hacemos para suscribirles a partial render? ver cards para ingresar a los cursos. 
-//si es un curso en el que estamos, el nav tiene un boton más, tendríamos que hacerle un append child de eso al nav? 
-// y si borramos ese menu desplegable y lo separamos en unidades que opinas? 
-//mostrarle lo que hicimos con mockapi. 
-//tenes 
 
-
-
-
-/**
- * 
- *      hacer todo un js y llamar la funcion
- * 
- * 
- */
 function iniciar() {
-    let currentJsLoaded = []; //ver si se puede hacer con un objeto. 
-    let currentCSSLoaded = []; //x2
+    let currentJsLoaded = [];
+    let currentCSSLoaded = []; 
     const pages = {
-        "sites/courses.html": {
-            "css": ["../css/index.css" ],
+        "/courses.html": {
+            "css": ["css/index.css" ],
             "js": {}
         },
-        "sites/consultanos.html": {
-            "css": ["../css/consultanos.css"],
-            "js":  {"../js/consultanos.js":"generateCaptchaScript" }
+        "/consultanos.html": {
+            "css": ["css/consultanos.css"],
+            "js":  {"js/consultanos.js":"generateCaptchaScript" }
         },
-        "sites/about_us.html": {
-            "css": ["../css/sobre_nosotras.css"],
+        "/about_us.html": {
+            "css": ["css/sobre_nosotras.css"],
             "js": {}
         },
-        "sites/programming_introduction.html": {
-            "css": [ "../css/course.css"],
+        "/programming_introduction.html": {
+            "css": [ "css/course.css"],
             "js": 
                 {
-                    "../js/course.js":"generateIndexCourseMenu",
-                    "../js/mockapi.js": "iniciarMockapi"
-                }//RE FLASHERO: "functionsToActivate": [iniciarMockapi] pero necesito que se ejecute antes la funcion... 
+                    "js/course.js":"generateIndexCourseMenu",
+                    "js/mockapi.js": "iniciarMockapi"
+                }
         },
-        "sites/web_1.html":{
-            "css": [ "../css/course.css"],
-            "js": { "../js/course.js": "generateIndexCourseMenu"}
+        "/web_1.html":{
+            "css": [ "css/course.css"],
+            "js": { "js/course.js": "generateIndexCourseMenu"}
         
         }
 
@@ -51,7 +34,7 @@ function iniciar() {
 
 
     let main = document.getElementById("page-main");
-    //suscribirLinksAPartialRender();
+
 
     let links = document.querySelectorAll(".link");
     asignarPartialRender(links);
@@ -62,13 +45,13 @@ function iniciar() {
             let response = await fetch(newString);
             if (response.ok) {
                 let html = await response.text(); 
-                main.innerHTML = html; //traigo el HTML correspondiente. 
+                main.innerHTML = html; 
                 //removeEventListener()
-                if (newString.endsWith('courses.html')){ //se puede hacer esto harcodeado para llamar a la funcion que llama a todo de cada html. 
+                if (newString.endsWith('courses.html')){
                     let links = document.querySelectorAll('#home .link'); 
                     asignarPartialRender(links);
                 }
-                if (!document.querySelector("#course-menu") && (newString.endsWith('programming_introduction.html') || newString.endsWith('web_1.html'))){ //se puede hacer esto harcodeado para llamar a la funcion que llama a todo de cada html. 
+                if (!document.querySelector("#course-menu") && (newString.endsWith('programming_introduction.html') || newString.endsWith('web_1.html'))){ 
                     let header = document.querySelector('header');
                     let indexCourseButton = document.createElement('button');
                     indexCourseButton.innerHTML = "temas";
@@ -89,12 +72,13 @@ function iniciar() {
                 
                 
                 
-                const page = pages[url];//accedemos a partir de la clave html que queremos para poder acceder al valor de objeto que queremos. Es más eficiente. 
                 /*if(page["loaded"] == false) {
                     suscribirJavaScript(page);
                     suscribirCSS(page);    
                     page["loaded"] = true;
                 }*/
+                //let cleanUrl = url.startsWith("/") ? url.slice(1) : url;
+                const page = pages[newString];
                 suscribirJavaScript(page);
                 suscribirCSS(page);  
 
@@ -104,52 +88,61 @@ function iniciar() {
             console.log(error);
         }
     }
+
+    const route = (event) => {
+        event = event || window.event;
+        event.preventDefault();
+        window.history.pushState({},"", event.target.href);
+        handleLocation();
+    }
+    const routes = {
+        404: "/pages/404.html",
+        "/":"/courses.html",
+        "/about_us": "/about_us.html",
+        "/consultanos": "/consultanos.html", 
+        "/programming_introduction": "/programming_introduction.html", 
+        "/web_1": "/web_1.html"
+    }
+    const handleLocation = async () => {
+        const path = window.location.pathname;
+        const route = routes[path] || routes[404];
+        partialRender(route);
+        //const html = await fetch(route).then((data) => data.text());
+        //main.innerHTML = html;
+    }
+    window.onpopstate = handleLocation;
+    window.route = route;
+    handleLocation();
+
     function asignarPartialRender(arreglolinks) { //suscribe los elementos del arreglo links al evento. 
         
         for(let index=0; index < arreglolinks.length; index ++) {
             const element = arreglolinks[index];
-            element.addEventListener('click', function(e) {
-                e.preventDefault();
-                partialRender(String(this.getAttribute('href')));
+            element.addEventListener('click', function(event) {
+                route(event);
+                //let href = e.target.getAttribute("href");
+                //partialRender(String(this.getAttribute('href')));
+                //navigate("/" + href);   
+                
             });
         }
     }
     function suscribirJavaScript(currentPageToLoad) {
-        /*************************
-         * 
-         * 
-         * 
-         * 
-         * 
-         *              PREGUNTAR A ALE
-         * 
-         *              
-         *              pedir auxilio con el history y preguntar por rutas absolutas y mieldas varias :3
-         * 
-         * 
-         * 
-         * 
-         * ******************************* */
         
         let jsToImport = currentPageToLoad["js"];
         
-        let divOfScripts = document.querySelector("#scripts"); //lo importo acá y elimino las funciones de DOMContentLoaded para no hardcodearlas acá para que se activen (igual todas se llaman iniciar) o las llamo acá y dejo lo de DOMContentLoaded?
+        let divOfScripts = document.querySelector("#scripts"); 
         divOfScripts.innerHTML = "";
-        //currentJsLoaded = []; NO SE PUEDE HACER ESTO PORQUE LAS VARIABLES GLOBALES Y LA DECLARACION DE FUNCIONES GLOBALES VIVEN EN MEMORIA UNA VEZ QUE FUERON CONOCIDAS, HACER ESTO NO LAS BORRA, VOLVER A LLAMAR EL SCRIPT NO CAMBIA NADA PORQUE EL SCRIPT ES SOLO UNA REFERENCIA AL CODIGO, NO ES EL CODIGO QUE SE GUARDÓ EN MEMORIA, ESTE AUNQUE SE HAYA TERMINADO DE EJECUTAR NO LIBERA DE LA MEMORIA LAS DECLARACIONES DE VARIABLES O FUNCIONES GLOBALES. Y PINCHE JAVASCRIPT ORTIVA QUE NO ME VA A DEJAR NO HARDCODEAR EL LLAMADO A FUNCIONES.  
+         
         for (let jsImport in jsToImport) { //RECORRE POR CLAVES SI ES IN, SE USA EN OBJETOS.
             const nombreFuncion = jsToImport[jsImport];
             if (!currentJsLoaded.includes(jsImport)) {
                 let tagScript = document.createElement('script');
                 tagScript.type = "text/javascript";
                 tagScript.src = jsImport;
-                /*script.onload = () => {
-                    if (typeof iniciar === 'function') iniciar(); //  de esta forma se podría llamar a las funciones de los scripts si dejo el domcontentloaded. 
-                };*/
-                
-
-                tagScript.onload = () => {
-                    if (typeof window[nombreFuncion] === "function") {
-                        window[nombreFuncion]();
+                tagScript.onload = () => { //TENGO QUE VER SI SE CARGÓ EL SCRIPT. 
+                    if (typeof window[nombreFuncion] === "function") { //SI LA FUNCION ESTA DECLARADA EN MEMORIA 
+                        window[nombreFuncion](); //LA LLAMO. 
                     }
                 }
                 divOfScripts.appendChild(tagScript);
@@ -181,5 +174,5 @@ function iniciar() {
         }
     }
     
-    partialRender("sites/courses.html");
+    
 }

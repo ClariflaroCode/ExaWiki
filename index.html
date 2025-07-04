@@ -1,68 +1,71 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tu amiga fiel de Ingeniería de Sistemas y TUDAI"/>
-    <link rel="stylesheet" href="css/styles.css">
-      <!--<link rel="stylesheet" href="css/index.css">
-    -->
-
-    <title>ExaWiki</title>
-</head>
-<body id="fondo"> <!--aca añadimos dinamicamente las clases claro oscuro con javascript-->
-    <header id="page-header">
-        <nav id="navbar-main">
-            <ul>
-                <li><button id="open-menu" class="menu-button" type="button">
-                    <img src="img/lineasMenuNegro.png" alt="tres lineas negras"></button></li>
-                <li><a class="link" href="sites/courses.html"><img class="logo" src="img/logo2.png" alt="Exawiki con un sigma en lugar de la E"></a></li>
-                <li>
-                    <label for="switch-light-dark"> <img id="theme-img" src="" alt="luna"> </label>
-                    <input id="switch-light-dark" type="button" alt="selector de tema claro oscuro">
-                </li>
-            </ul>
-        </nav>
-    
-        <nav id="navbar-topics">
-            <ul class="nav-menu">
-                <li><a class="link" data-id="home" href="sites/courses.html">MATERIAS</a></li>
-                <li><a class="link" href="sites/consultanos.html">CONSULTANOS</a></li>
-                <li><a class="link" href="sites/about_us.html">SOBRE NOSOTRAS</a></li>
-            </ul>  
-        </nav>
-    </header>
-    <main id="page-main">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Tu amiga fiel de Ingeniería de Sistemas y TUDAI"/>
+        <link rel="stylesheet" href="css/styles.css">
+        <title>ExaWiki</title>
+    </head>
+    <body id="fondo"> 
+        <header id="page-header">
+            <nav id="navbar-main">
+                <ul>
+                    <li>
+                        <button id="open-menu" class="menu-button" type="button">
+                            <img src="img/lineasMenuNegro.png" alt="tres lineas negras">
+                        </button>
+                    </li>
+                    <li>
+                        <a class="link" href="/">
+                            <img class="logo" src="img/logo2.png" alt="Exawiki con un sigma en lugar de la E">
+                        </a>
+                    </li>
+                    <li>
+                        <label for="switch-light-dark"> 
+                            <img id="theme-img" src="" alt="luna"> 
+                        </label>
+                        <input id="switch-light-dark" type="button" alt="selector de tema claro oscuro">
+                    </li>
+                </ul>
+            </nav>
         
-    </main>
-    <footer id="page-footer">
-        <a href="https://www.linkedin.com/in/julieta-watts/" target="_blank">
-            <figure>
-                <img src="img/InBug-White.png" alt="icono-linkedIn" >
-                <figcaption>LinkedIn Julieta</figcaption>
-            </figure>
+            <nav id="navbar-topics">
+                <ul class="nav-menu">
+                    <li>
+                        <a class="link" data-id="home" href="/">MATERIAS</a>
+                    </li>
+                    <li>
+                        <a class="link" href="/consultanos">CONSULTANOS</a>
+                    </li>
+                    <li>
+                        <a class="link" href="/about_us">SOBRE NOSOTRAS</a>
+                    </li>
+                </ul>  
+            </nav>
+        </header>
+        <main id="page-main">
+            
+        </main>
+        <footer id="page-footer">
+            <a href="https://www.linkedin.com/in/julieta-watts/" target="_blank">
+                <figure>
+                    <img src="img/InBug-White.png" alt="icono-linkedIn">
+                    <figcaption>LinkedIn Julieta</figcaption>
+                </figure>
             </a>
-        <a href="https://www.linkedin.com/in/sofia-niyen" target="_blank">
-            <figure>
-                <img src="img/InBug-White.png" alt="icono-linkedIn" >
-                <figcaption>LinkedIn Sofía</figcaption>
-            </figure>
-        </a>
-    </footer>
-    <div id="scripts">
-    <!--
-        <script type="text/javascript" src="../js/main.js"></script>
-        
-        
-
-        <script type="text/javascript" src="../js/course.js"></script>
-        <script type="text/javascript" src="../js/mockapi.js"></script>
-        <script type="text/javascript" src="../js/consultanos.js"></script>
+            <a href="https://www.linkedin.com/in/sofia-niyen" target="_blank">
+                <figure>
+                    <img src="img/InBug-White.png" alt="icono-linkedIn">
+                    <figcaption>LinkedIn Sofía</figcaption>
+                </figure>
+            </a>
+        </footer>
+        <div id="scripts">
     
-    -->
-    </div>
-    <script type="text/javascript" src="../js/main.js"></script>
-    <script type="text/javascript" src="js/menu_desplegable_principal.js"></script>
-    <script type="text/javascript" src="js/partialRender.js"></script>
-</body>
+        </div>
+        <script type="text/javascript" src="../js/main.js"></script>
+        <script type="text/javascript" src="js/menu_desplegable_principal.js"></script>
+        <script type="text/javascript" src="js/partialRender.js"></script>
+    </body>
 </html>
