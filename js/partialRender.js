@@ -93,7 +93,7 @@ function iniciar() {
         event = event || window.event;
         event.preventDefault();
         window.history.pushState({},"", event.target.href);
-        handleLocation();
+        handleHashChange();
     }
     const routes = {
         404: "/pages/404.html",
@@ -103,27 +103,23 @@ function iniciar() {
         "/programming_introduction": "/programming_introduction.html", 
         "/web_1": "/web_1.html"
     }
-    const handleLocation = async () => {
-        const path = window.location.pathname;
+    function handleHashChange() {
+        const hash = window.location.hash || "#/";
+        const path = hash.replace("#", ""); //limpia los numerales
         const route = routes[path] || routes[404];
         partialRender(route);
-        //const html = await fetch(route).then((data) => data.text());
-        //main.innerHTML = html;
+        
     }
-    window.onpopstate = handleLocation;
+    window.addEventListener("hashchange", handleHashChange);
     window.route = route;
-    handleLocation();
+    handleHashChange(); //si cambia lo que sigue al numeral el navegador lo detecta y lanza el evento "hashChange". El servidor sólo ve lo de antes del numeral, lo que hace que siempre devuelva el index. Lo que sigue al numeral lo maneja el cliente. 
 
     function asignarPartialRender(arreglolinks) { //suscribe los elementos del arreglo links al evento. 
         
         for(let index=0; index < arreglolinks.length; index ++) {
             const element = arreglolinks[index];
             element.addEventListener('click', function(event) {
-                route(event);
-                //let href = e.target.getAttribute("href");
-                //partialRender(String(this.getAttribute('href')));
-                //navigate("/" + href);   
-                
+                route(event);         
             });
         }
     }
